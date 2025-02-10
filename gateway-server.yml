@@ -1,0 +1,48 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    gateway:
+      routes:
+        - id: auth-route
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+
+        - id: user-route
+          uri: lb://user-service
+          predicates:
+            - Path=/user/**
+
+
+        - id: music-route
+          uri: lb://music-service
+          predicates:
+            - Path=/music/**
+
+
+        - id: messaging-route
+          uri: lb://messaging-service
+          predicates:
+            - Path=/messaging/**
+
+
+        - id: task-scheduler-route
+          uri: lb://task-scheduler-service
+          predicates:
+            - Path=/task-scheduler/**
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    gateway:
+      enabled: true
