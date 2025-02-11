@@ -8,7 +8,7 @@ jwt:
       resource-id: authenticationClientId
 keycloak:
   realm: kevin-music
-  domain: http://localhost:9081
+  domain: localhost:9081
   adminClientId: admin-cli
   adminClientSecret: AMvVmRpNg4ylP1ScbC0zVbqPUaOi2iWf
   client: authenticationClientId
@@ -21,4 +21,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://${keycloak.domain}/realms/${keycloak.realm}
+          issuer-uri: http://${keycloak.domain}/realms/${keycloak.realm}
