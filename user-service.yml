@@ -12,7 +12,7 @@ app:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc://mysql://${app.dbHostName}:${app.dbPort}/${app.dbName}?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=Europe/Rome&autoReconnect=true
+    url: jdbc:mysql://${app.dbHostName}:${app.dbPort}/${app.dbName}?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=Europe/Rome&autoReconnect=true
     username: ${app.dbUsername}
     password: ${app.dbPassword}
     testWhileIdle: true
