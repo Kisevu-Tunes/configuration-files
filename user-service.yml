@@ -5,7 +5,7 @@ server:
 
 app:
   dbHostName: localhost
-  dbPort: 3306
+  dbPort: 3377
   dbUsername: root
   dbPassword: password
   dbName: users_db
