@@ -9,6 +9,9 @@ app:
   dbUsername: root
   dbPassword: password
   dbName: users_db
+  keycloak:
+    domain: localhost:9081
+    realm: kevin-music
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -28,3 +31,13 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         storage_engine: innodb
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://${app.keycloak.domain}/realms/${app.keycloak.realm}
+
+jwt:
+  auth:
+    converter:
+      resource-id: authenticationClientId
