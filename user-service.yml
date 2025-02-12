@@ -41,3 +41,9 @@ jwt:
   auth:
     converter:
       resource-id: authenticationClientId
+
+bunny-net:
+  storagePrimaryUrl: https://storage.bunnycdn.com
+  storageCdnBaseUrl:
+  storageZone: kevin-music
+  storageUrlApiKey: 23ee0a15-a2cf-41cf-a47e92cc7176-3653-4b95
